@@ -1,7 +1,7 @@
 #!/bin/bash
-str=`ps -aux | grep emacsclient | grep -v grep`
+str=`wmctrl -l | grep emacs`
 if ["$str" -ne ""]
-then emacsclient -nc && sleep 1
+then emacsclient -nc && wmctrl -a emacs@leetz
 fi
 wmctrl -a emacs@leetz
 
